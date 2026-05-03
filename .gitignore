@@ -1,23 +1,9 @@
-# Terraform
+# Terraform directories & state
 .terraform/
+.terraform.lock.hcl    # commit this only if you want to pin provider versions
 *.tfstate
-*.tfstate.backup
+*.tfstate.*
+*.tfvars               # often contains secrets
 crash.log
-
-# Terraform variable files
-*.tfvars
-*.tfvars.json
-
-# Terraform plan files
-*.tfplan
-
-# Sensitive files
 override.tf
 override.tf.json
-*_override.tf
-*_override.tf.json
-
-# CLI config
-.terraformrc
-terraform.rc.terraform/
-.terraform.lock.hcl
