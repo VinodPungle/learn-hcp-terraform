@@ -10,21 +10,29 @@ terraform {
   required_version = ">= 1.1.0"
 }
 
+
+  cloud {
+    organization = "myTFOrganizatoin"
+    workspaces {
+      name = "learn-hcp-terraform"
+    }
+  }
+
 provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group_hcp" "rg" {
   name     = var.resource_group_name
   location = "westus2"
 
   tags = {
-    Environment = "Terraform Getting Started"
+    Environment = "Terraform Getting Started on hcp-terraform"
     Team = "DevOps"
   }
 }
 # Create a virtual network
-resource "azurerm_virtual_network" "vnet" {
+resource "azurerm_virtual_network" "vnet_hcp" {
   name                = "myTFVnet"
   address_space       = ["10.0.0.0/16"]
   location            = "westus2"
