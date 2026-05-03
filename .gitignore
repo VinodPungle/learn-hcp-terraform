@@ -19,4 +19,5 @@ override.tf.json
 
 # CLI config
 .terraformrc
-terraform.rc
+terraform.rc.terraform/
+.terraform.lock.hcl
