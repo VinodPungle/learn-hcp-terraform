@@ -1,5 +1,11 @@
 # Configure the Azure provider
 terraform {
+cloud {
+    organization = "myTFOrganizatoin"
+    workspaces {
+      name = "learn-hcp-terraform"
+    }
+  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -11,12 +17,7 @@ terraform {
 }
 
 
-  cloud {
-    organization = "myTFOrganizatoin"
-    workspaces {
-      name = "learn-hcp-terraform"
-    }
-  }
+  
 
 provider "azurerm" {
   features {}
